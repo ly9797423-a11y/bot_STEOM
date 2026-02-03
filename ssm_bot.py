@@ -140,7 +140,7 @@ class Constants:
     """فئة للثوابت والإعدادات"""
     
     # إعدادات البوت
-    TOKEN = "8481569753:AAHTdbWwu0BHmoo_iHPsye8RkTptWzfiQWU"
+    TOKEN = "8481569753:AAH3alhJ0hcHldht-PxV7j8TzBlRsMqAqGI"
     BOT_USERNAME = "@FC4Xbot"
     ADMIN_ID = 6130994941
     SUPPORT_USERNAME = "Allawi04@"
