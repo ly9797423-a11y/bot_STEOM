@@ -44,7 +44,7 @@ from bidi.algorithm import get_display
 BOT_TOKEN = "8481569753:AAH3alhJ0hcHldht-PxV7j8TzBlRsMqAqGI"
 BOT_USERNAME = "@FC4Xbot"
 DEVELOPER_ID = 6130994941
-DEVELOPER_USERNAME = "Allawi04@"
+DEVELOPER_USERNAME = "@Allawi04"
 CHANNEL_LINK = "https://t.me/FCJCV"
 GEMINI_API_KEY = "AIzaSyARsl_YMXA74bPQpJduu0jJVuaku7MaHuY"
 
