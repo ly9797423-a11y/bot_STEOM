@@ -76,7 +76,7 @@ import asyncio
 # ====================== إعدادات البوت ======================
 BOT_TOKEN = "8279341291:AAGet-xHKrmSg1RuBYaaNuzmaqv1LgwUM6E"
 ADMIN_ID = 6130994941
-BOT_USERNAME = "@FC4Xbot"
+BOT_USERNAME = "SSDDFmakBOT"
 SUPPORT_USERNAME = "@Allawi04"
 CHANNEL_USERNAME = "@FCJCV"
 
