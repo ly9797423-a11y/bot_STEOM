@@ -314,6 +314,7 @@ class MegaDatabase:
                 'last_transfer_time': None,
                 'transfer_blocked': False,
                 'vip_auto_renew': True
+                'referral_reward_given': False,
             }
             for key, default_value in defaults.items():
                 if key not in m:
@@ -783,6 +784,10 @@ class MegaDatabase:
         """
         new_member = self.get_member(new_member_id)
         inviter_id = new_member.get('referred_by')
+
+        # ⚠️ تحقق: إذا كان العضو قد حصل على المكافأة مسبقاً، لا تعطيه مرة أخرى
+        if new_member.get('referral_reward_given', False):
+        return
         
         if inviter_id and inviter_id in self._members:
             inviter = self.get_member(inviter_id)
@@ -792,6 +797,9 @@ class MegaDatabase:
             inviter['balance'] = inviter.get('balance', 0) + inviter_reward
             inviter['referral_earnings'] = inviter.get('referral_earnings', 0) + inviter_reward
             new_member['balance'] = new_member.get('balance', 0) + invited_reward
+            
+            # ✅ تعليم أن المكافأة تم منحها
+            new_member['referral_reward_given'] = True
             
             self._log_activity(inviter_id, f"💰 حصل على {inviter_reward:,} IQD مكافأة إحالة بعد تحقق المدعو")
             self._log_activity(new_member_id, f"🎁 حصل على {invited_reward:,} IQD مكافأة تسجيل بعد التحقق")
