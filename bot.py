@@ -313,7 +313,7 @@ class MegaDatabase:
                 'captcha_banned_until': None,
                 'last_transfer_time': None,
                 'transfer_blocked': False,
-                'vip_auto_renew': True
+                'vip_auto_renew': True,
                 'referral_reward_given': False,
             }
             for key, default_value in defaults.items():
