@@ -787,7 +787,7 @@ class MegaDatabase:
 
         # ⚠️ تحقق: إذا كان العضو قد حصل على المكافأة مسبقاً، لا تعطيه مرة أخرى
         if new_member.get('referral_reward_given', False):
-        return
+            return
         
         if inviter_id and inviter_id in self._members:
             inviter = self.get_member(inviter_id)
