@@ -4441,7 +4441,7 @@ async def handle_all_messages(update: Update, context: ContextTypes.DEFAULT_TYPE
                 await update.message.reply_text("⚠️ يرجى الاشتراك في القنوات التالية:", reply_markup=InlineKeyboardMarkup(kb))
                 return ConversationHandler.END
             
-            db.give_referral_reward(member_id)
+            await db.give_referral_reward(member_id, bot=context.bot)
             for wmsg in db.get_welcome_messages():
                 try:
                     if wmsg.get('type') == 'text':
