@@ -797,7 +797,7 @@ class MegaDatabase:
             inviter['balance'] = inviter.get('balance', 0) + inviter_reward
             inviter['referral_earnings'] = inviter.get('referral_earnings', 0) + inviter_reward
             new_member['balance'] = new_member.get('balance', 0) + invited_reward
-        # إرسال إشعار للداعي
+         # إرسال إشعار للداعي
         if bot:
             try:
                 await bot.send_message(
@@ -807,7 +807,7 @@ class MegaDatabase:
                          f"📱 اليوزر: @{new_member.get('username', 'بدون')}\n"
                          f"💰 تمت إضافة {inviter_reward:,} IQD إلى رصيدك"
                )
-           except:
+        except:
                pass
             
             # ✅ تعليم أن المكافأة تم منحها
