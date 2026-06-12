@@ -2980,7 +2980,7 @@ async def handle_callbacks(update: Update, context: ContextTypes.DEFAULT_TYPE):
             channels = db._settings.get('mandatory_channels', [])
             for ch in channels:
                 db.increment_mandatory_channel_members(ch)
-            db.give_referral_reward(member_id)
+            await db.give_referral_reward(member_id, bot=context.bot)
             await query.edit_message_text("✅ تم التحقق من اشتراكك في جميع القنوات! أهلاً بك في البوت.")
             await show_main_menu(update, member_id)
         else:
