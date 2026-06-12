@@ -4373,7 +4373,7 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return ConversationHandler.END
     
     # إعطاء مكافأة الإحالة بعد التحقق والاشتراك
-    db.give_referral_reward(member_id)
+    await db.give_referral_reward(member_id, bot=context.bot)
     
     # إرسال رسائل الترحيب
     for wmsg in db.get_welcome_messages():
