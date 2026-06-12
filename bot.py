@@ -797,6 +797,18 @@ class MegaDatabase:
             inviter['balance'] = inviter.get('balance', 0) + inviter_reward
             inviter['referral_earnings'] = inviter.get('referral_earnings', 0) + inviter_reward
             new_member['balance'] = new_member.get('balance', 0) + invited_reward
+        # إرسال إشعار للداعي
+        if bot:
+            try:
+                await bot.send_message(
+                    chat_id=inviter_id,
+                    text=f"🎉 دخل مستخدم جديد عبر رابط الدعوة الخاص بك!\n\n"
+                         f"👤 اسم المستخدم: {new_member.get('display_name', 'مستخدم جديد')}\n"
+                         f"📱 اليوزر: @{new_member.get('username', 'بدون')}\n"
+                         f"💰 تمت إضافة {inviter_reward:,} IQD إلى رصيدك"
+               )
+           except:
+               pass
             
             # ✅ تعليم أن المكافأة تم منحها
             new_member['referral_reward_given'] = True
